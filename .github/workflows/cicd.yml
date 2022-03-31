@@ -53,3 +53,5 @@ jobs:
           # By default, this argument is set to "web".
           # For more information look at https://devcenter.heroku.com/articles/process-model
           process_type: web
+      - name: teste
+        run: rm -f tmp/pids/server.pid && bundle exec rails s -p 80 -b '0.0.0.0'
