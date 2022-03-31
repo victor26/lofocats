@@ -1,11 +1,11 @@
 development:
-  url: 'http://localhost:3001'
+  url: 'https://lofotcats.herokuapp.com'
   version: '1'
 
 test:
-  url: 'http://localhost:3001'
+  url: 'https://lofotcats.herokuapp.com'
   version: '1'
 
 production:
-  url: 'http://localhost:3001'
+  url: 'https://lofotcats.herokuapp.com/'
   version: '1'
