@@ -4,7 +4,6 @@ WORKDIR /lofocats_ui
 COPY Gemfile /lofocats_ui/Gemfile
 COPY Gemfile.lock /lofocats_ui/Gemfile.lock
 RUN bundle install
-RUN bundle exec rails server
 
 COPY entrypoint.sh /usr/bin/
 RUN chmod +x /usr/bin/entrypoint.sh
