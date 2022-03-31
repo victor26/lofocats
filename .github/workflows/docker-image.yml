@@ -16,3 +16,10 @@ jobs:
     - uses: actions/checkout@v3
     - name: Build the Docker image
       run: docker build . --file Dockerfile --tag victor2616/lofocats:latest
+
+
+    -name : Login no DockerHub 
+        usa : docker/login-action@v1 
+        com :
+           nome de usuário : ${{ secrets.DOCKERHUB_USERNAME }} 
+          senha : ${{ secrets.DOCKERHUB_TOKEN }}
