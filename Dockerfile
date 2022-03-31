@@ -9,5 +9,5 @@ RUN chmod +x /usr/bin/entrypoint.sh
 ENTRYPOINT ["entrypoint.sh"]
 EXPOSE 80 
 
-CMD ["bundle", "exec", "rails", "s", "-p", "${PORT:-3000}", "-b", "0.0.0.0"]
+CMD ["bundle", "exec", "rails", "s", "-p", "\$\{PORT:-3000\}", "-b", "0.0.0.0"]
 
