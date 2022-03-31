@@ -21,34 +21,9 @@ services:
    deploy:
      placement:
        constraints: [node.role == manager]
-
-  visualizer:
-   image: dockersamples/visualizer:stable
-   ports:
-     - "8081:8080"
-   stop_grace_period: 1m30s
-   volumes:
-     - "/var/run/docker.sock:/var/run/docker.sock"
-   deploy:
-     placement:
-       constraints: [node.role == manager]
-  whoami2:
-   image: containous/whoami
-   ports:
-    - "82:80"
-   networks:
-    - traefik-public
-   deploy:
-       labels:
-         - traefik.enable=true
-         - traefik.http.routers.whoami2.rule=Host(`54.169.31.229`) && Path(`/whoami2`)
-         - traefik.http.routers.whoami2.entryPoints=web
-         - traefik.http.routers.whoami2.service=whoami2-service
-         - traefik.http.services.whoami2-service.loadbalancer.server.port=80
-         - traefik.docker.network=traefik-public
   
   lofo:
-   image: victor2616/lofocats:1.0
+   image: victor2616/lofocats:latest
    command: bash -c "rm -f tmp/pids/server.pid && bundle exec rails s -p 80 -b '0.0.0.0'"
    volumes:
      - .:/lofocats_ui
