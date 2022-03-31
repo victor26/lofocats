@@ -1,5 +1,5 @@
 # Your workflow name.
-name: Deploy to heroku.
+name: Teste
 
 # Run workflow on every push to master branch.
 on:
@@ -18,5 +18,5 @@ jobs:
         with:
           email: ${{ secrets.HEROKU_EMAIL }} # your heroku email
           api_key: ${{ secrets.HEROKU_API_KEY }} # your  heroku api key
-          docker_compose_file: ./
+          docker_compose_file: ''
           heroku_apps: '[{"victor2616/lofocats:latest":"lofocats","lofocats":lofocats","apptype":"web"}]' 
