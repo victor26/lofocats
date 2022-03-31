@@ -11,4 +11,4 @@ ENTRYPOINT ["entrypoint.sh"]
 EXPOSE 80 
 
 
-CMD ["bundle", "exec", "rails"]
+CMD ["rails", "server"]
